@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmo3lxxp6ly71"]
+
+[ext_resource type="Script" path="res://scenes/HowToPlay.gd" id="1_87fjc"]
+[ext_resource type="PackedScene" uid="uid://bbrs2v2b10v1r" path="res://scenes/FadeTransition.tscn" id="2_xaxjj"]
+
+[node name="HowToPlay" type="Node"]
+script = ExtResource("1_87fjc")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 64.0
+offset_bottom = 136.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "How To Play"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 192.0
+offset_bottom = 888.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "This is a point and click game.
+Interactable objects will be highlighted when hovering over them.
+Click them to either go to a different part of the map, pick up an item,
+or use an item.
+To use an item, click on it in your inventory to select it,
+then click on the interaction zone.
+Dialogue is advanced with enter.
+Have fun!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -384.0
+offset_top = -192.0
+offset_right = 384.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "Start"
+
+[node name="FadeTransition" parent="." instance=ExtResource("2_xaxjj")]
+offset_right = 26880.0
+offset_bottom = 15120.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

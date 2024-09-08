@@ -1,0 +1,324 @@
+[gd_scene load_steps=6 format=3 uid="uid://7bn725v0e36d"]
+
+[ext_resource type="Texture2D" uid="uid://dk3syv670teho" path="res://images/inventory.png" id="1_jxyjm"]
+[ext_resource type="Script" path="res://scripts/inventory.gd" id="2_s12xm"]
+[ext_resource type="Texture2D" uid="uid://bjofoc675ru3t" path="res://images/inventory button.png" id="3_xkhd6"]
+[ext_resource type="Texture2D" uid="uid://di3xia6ta20pl" path="res://images/inventory button3.png" id="4_3y13r"]
+[ext_resource type="Texture2D" uid="uid://xdscxnq3c5lk" path="res://images/inventory button2.png" id="5_gbk00"]
+
+[node name="Inventory" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_jxyjm")
+script = ExtResource("2_s12xm")
+
+[node name="ItemBlock" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 94.0
+offset_right = 170.2
+offset_bottom = 213.2
+disabled = true
+toggle_mode = true
+texture_normal = ExtResource("3_xkhd6")
+texture_pressed = ExtResource("4_3y13r")
+texture_hover = ExtResource("5_gbk00")
+
+[node name="TextureRect" type="TextureRect" parent="ItemBlock"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 115.0
+offset_bottom = 115.0
+expand_mode = 1
+
+[node name="ToolTip" type="Label" parent="ItemBlock"]
+visible = false
+layout_mode = 0
+offset_left = 4.0
+offset_top = 119.0
+offset_right = 1802.0
+offset_bottom = 167.0
+
+[node name="ItemBlock2" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 94.0
+offset_right = 357.2
+offset_bottom = 213.2
+disabled = true
+toggle_mode = true
+texture_normal = ExtResource("3_xkhd6")
+texture_pressed = ExtResource("4_3y13r")
+texture_hover = ExtResource("5_gbk00")
+
+[node name="TextureRect" type="TextureRect" parent="ItemBlock2"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 115.0
+offset_bottom = 115.0
+expand_mode = 1
+
+[node name="ToolTip" type="Label" parent="ItemBlock2"]
+visible = false
+layout_mode = 0
+offset_left = -183.0
+offset_top = 119.0
+offset_right = 1615.0
+offset_bottom = 167.0
+
+[node name="ItemBlock3" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 425.0
+offset_top = 94.0
+offset_right = 544.2
+offset_bottom = 213.2
+disabled = true
+toggle_mode = true
+texture_normal = ExtResource("3_xkhd6")
+texture_pressed = ExtResource("4_3y13r")
+texture_hover = ExtResource("5_gbk00")
+
+[node name="TextureRect" type="TextureRect" parent="ItemBlock3"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 115.0
+offset_bottom = 115.0
+expand_mode = 1
+
+[node name="ToolTip" type="Label" parent="ItemBlock3"]
+visible = false
+layout_mode = 0
+offset_left = -370.0
+offset_top = 119.0
+offset_right = 1428.0
+offset_bottom = 167.0
+
+[node name="ItemBlock4" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 612.0
+offset_top = 94.0
+offset_right = 731.2
+offset_bottom = 213.2
+disabled = true
+toggle_mode = true
+texture_normal = ExtResource("3_xkhd6")
+texture_pressed = ExtResource("4_3y13r")
+texture_hover = ExtResource("5_gbk00")
+
+[node name="TextureRect" type="TextureRect" parent="ItemBlock4"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 115.0
+offset_bottom = 115.0
+expand_mode = 1
+
+[node name="ToolTip" type="Label" parent="ItemBlock4"]
+visible = false
+layout_mode = 0
+offset_left = -557.0
+offset_top = 119.0
+offset_right = 1241.0
+offset_bottom = 167.0
+
+[node name="ItemBlock5" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 799.0
+offset_top = 94.0
+offset_right = 918.2
+offset_bottom = 213.2
+disabled = true
+toggle_mode = true
+texture_normal = ExtResource("3_xkhd6")
+texture_pressed = ExtResource("4_3y13r")
+texture_hover = ExtResource("5_gbk00")
+
+[node name="TextureRect" type="TextureRect" parent="ItemBlock5"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 115.0
+offset_bottom = 115.0
+expand_mode = 1
+
+[node name="ToolTip" type="Label" parent="ItemBlock5"]
+visible = false
+layout_mode = 0
+offset_left = -744.0
+offset_top = 119.0
+offset_right = 1054.0
+offset_bottom = 167.0
+
+[node name="ItemBlock6" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 986.0
+offset_top = 94.0
+offset_right = 1105.2
+offset_bottom = 213.2
+disabled = true
+toggle_mode = true
+texture_normal = ExtResource("3_xkhd6")
+texture_pressed = ExtResource("4_3y13r")
+texture_hover = ExtResource("5_gbk00")
+
+[node name="TextureRect" type="TextureRect" parent="ItemBlock6"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 115.0
+offset_bottom = 115.0
+expand_mode = 1
+
+[node name="ToolTip" type="Label" parent="ItemBlock6"]
+visible = false
+layout_mode = 0
+offset_left = -931.0
+offset_top = 119.0
+offset_right = 867.0
+offset_bottom = 167.0
+
+[node name="ItemBlock7" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1173.0
+offset_top = 94.0
+offset_right = 1292.2
+offset_bottom = 213.2
+disabled = true
+toggle_mode = true
+texture_normal = ExtResource("3_xkhd6")
+texture_pressed = ExtResource("4_3y13r")
+texture_hover = ExtResource("5_gbk00")
+
+[node name="TextureRect" type="TextureRect" parent="ItemBlock7"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 115.0
+offset_bottom = 115.0
+expand_mode = 1
+
+[node name="ToolTip" type="Label" parent="ItemBlock7"]
+visible = false
+layout_mode = 0
+offset_left = -1118.0
+offset_top = 119.0
+offset_right = 680.0
+offset_bottom = 167.0
+
+[node name="ItemBlock8" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1360.0
+offset_top = 94.0
+offset_right = 1479.2
+offset_bottom = 213.2
+disabled = true
+toggle_mode = true
+texture_normal = ExtResource("3_xkhd6")
+texture_pressed = ExtResource("4_3y13r")
+texture_hover = ExtResource("5_gbk00")
+
+[node name="TextureRect" type="TextureRect" parent="ItemBlock8"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 115.0
+offset_bottom = 115.0
+expand_mode = 1
+
+[node name="ToolTip" type="Label" parent="ItemBlock8"]
+visible = false
+layout_mode = 0
+offset_left = -1305.0
+offset_top = 119.0
+offset_right = 493.0
+offset_bottom = 167.0
+
+[node name="ItemBlock9" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1547.0
+offset_top = 94.0
+offset_right = 1666.2
+offset_bottom = 213.2
+disabled = true
+toggle_mode = true
+texture_normal = ExtResource("3_xkhd6")
+texture_pressed = ExtResource("4_3y13r")
+texture_hover = ExtResource("5_gbk00")
+
+[node name="TextureRect" type="TextureRect" parent="ItemBlock9"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 115.0
+offset_bottom = 115.0
+expand_mode = 1
+
+[node name="ToolTip" type="Label" parent="ItemBlock9"]
+visible = false
+layout_mode = 0
+offset_left = -1492.0
+offset_top = 119.0
+offset_right = 306.0
+offset_bottom = 167.0
+
+[node name="ItemBlock10" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1734.0
+offset_top = 94.0
+offset_right = 1853.2
+offset_bottom = 213.2
+disabled = true
+toggle_mode = true
+texture_normal = ExtResource("3_xkhd6")
+texture_pressed = ExtResource("4_3y13r")
+texture_hover = ExtResource("5_gbk00")
+
+[node name="TextureRect" type="TextureRect" parent="ItemBlock10"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 115.0
+offset_bottom = 115.0
+expand_mode = 1
+
+[node name="ToolTip" type="Label" parent="ItemBlock10"]
+visible = false
+layout_mode = 0
+offset_left = -1679.0
+offset_top = 119.0
+offset_right = 119.0
+offset_bottom = 167.0
+
+[connection signal="mouse_entered" from="ItemBlock" to="." method="_on_item_block_mouse_entered" binds= [0]]
+[connection signal="mouse_exited" from="ItemBlock" to="." method="_on_item_block_mouse_exited" binds= [0]]
+[connection signal="pressed" from="ItemBlock" to="." method="_on_texture_button_pressed" binds= [0]]
+[connection signal="mouse_entered" from="ItemBlock2" to="." method="_on_item_block_mouse_entered" binds= [1]]
+[connection signal="mouse_exited" from="ItemBlock2" to="." method="_on_item_block_mouse_exited" binds= [1]]
+[connection signal="pressed" from="ItemBlock2" to="." method="_on_texture_button_pressed" binds= [1]]
+[connection signal="mouse_entered" from="ItemBlock3" to="." method="_on_item_block_mouse_entered" binds= [2]]
+[connection signal="mouse_exited" from="ItemBlock3" to="." method="_on_item_block_mouse_exited" binds= [2]]
+[connection signal="pressed" from="ItemBlock3" to="." method="_on_texture_button_pressed" binds= [2]]
+[connection signal="mouse_entered" from="ItemBlock4" to="." method="_on_item_block_mouse_entered" binds= [3]]
+[connection signal="mouse_exited" from="ItemBlock4" to="." method="_on_item_block_mouse_exited" binds= [3]]
+[connection signal="pressed" from="ItemBlock4" to="." method="_on_texture_button_pressed" binds= [3]]
+[connection signal="mouse_entered" from="ItemBlock5" to="." method="_on_item_block_mouse_entered" binds= [4]]
+[connection signal="mouse_exited" from="ItemBlock5" to="." method="_on_item_block_mouse_exited" binds= [4]]
+[connection signal="pressed" from="ItemBlock5" to="." method="_on_texture_button_pressed" binds= [4]]
+[connection signal="mouse_entered" from="ItemBlock6" to="." method="_on_item_block_mouse_entered" binds= [5]]
+[connection signal="mouse_exited" from="ItemBlock6" to="." method="_on_item_block_mouse_exited" binds= [5]]
+[connection signal="pressed" from="ItemBlock6" to="." method="_on_texture_button_pressed" binds= [5]]
+[connection signal="mouse_entered" from="ItemBlock7" to="." method="_on_item_block_mouse_entered" binds= [6]]
+[connection signal="mouse_exited" from="ItemBlock7" to="." method="_on_item_block_mouse_exited" binds= [6]]
+[connection signal="pressed" from="ItemBlock7" to="." method="_on_texture_button_pressed" binds= [6]]
+[connection signal="mouse_entered" from="ItemBlock8" to="." method="_on_item_block_mouse_entered" binds= [7]]
+[connection signal="mouse_exited" from="ItemBlock8" to="." method="_on_item_block_mouse_exited" binds= [7]]
+[connection signal="pressed" from="ItemBlock8" to="." method="_on_texture_button_pressed" binds= [7]]
+[connection signal="mouse_entered" from="ItemBlock9" to="." method="_on_item_block_mouse_entered" binds= [8]]
+[connection signal="mouse_exited" from="ItemBlock9" to="." method="_on_item_block_mouse_exited" binds= [8]]
+[connection signal="pressed" from="ItemBlock9" to="." method="_on_texture_button_pressed" binds= [8]]
+[connection signal="mouse_entered" from="ItemBlock10" to="." method="_on_item_block_mouse_entered" binds= [9]]
+[connection signal="mouse_exited" from="ItemBlock10" to="." method="_on_item_block_mouse_exited" binds= [9]]
+[connection signal="pressed" from="ItemBlock10" to="." method="_on_texture_button_pressed" binds= [9]]

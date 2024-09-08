@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_8"
+type="Resource"
+uid="uid://dxm0gvkqilh8x"
+path="res://.godot/imported/scenario1.dialogue-db162f594ed2557f02c100ea6cc3ebd1.tres"
+
+[deps]
+
+source_file="res://dialogue/scenario1.dialogue"
+dest_files=["res://.godot/imported/scenario1.dialogue-db162f594ed2557f02c100ea6cc3ebd1.tres"]
+
+[params]
+
+defaults=true

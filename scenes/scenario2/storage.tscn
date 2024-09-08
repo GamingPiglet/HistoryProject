@@ -1,0 +1,56 @@
+[gd_scene load_steps=11 format=3 uid="uid://242ttgua2ri3"]
+
+[ext_resource type="Script" path="res://scripts/room.gd" id="1_5m635"]
+[ext_resource type="Texture2D" uid="uid://hsijyusahygt" path="res://images/tray.png" id="1_qbivj"]
+[ext_resource type="Texture2D" uid="uid://ovgkdx80lxxx" path="res://images/backbutton.png" id="2_hsglx"]
+[ext_resource type="PackedScene" uid="uid://7bn725v0e36d" path="res://scenes/Inventory.tscn" id="2_kytlm"]
+[ext_resource type="Texture2D" uid="uid://dtw7nyo4a6w81" path="res://images/tools.png" id="3_ay1ry"]
+[ext_resource type="PackedScene" uid="uid://bbrs2v2b10v1r" path="res://scenes/FadeTransition.tscn" id="3_fp3fm"]
+[ext_resource type="Texture2D" uid="uid://cyln7ru1fl5i7" path="res://images/backbutton2.png" id="3_vysrr"]
+[ext_resource type="Texture2D" uid="uid://4bt14lhwuubh" path="res://images/toolshover.png" id="4_ghvs4"]
+[ext_resource type="Texture2D" uid="uid://cx83w1n5hwty8" path="res://images/gauze1.png" id="5_kscpm"]
+[ext_resource type="Texture2D" uid="uid://bfr5g2uxqka8d" path="res://images/gauzehover1.png" id="6_eu3im"]
+
+[node name="table" type="TextureRect"]
+texture = ExtResource("1_qbivj")
+script = ExtResource("1_5m635")
+
+[node name="tools" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 242.0
+offset_top = 312.0
+offset_right = 793.0
+offset_bottom = 613.0
+texture_normal = ExtResource("3_ay1ry")
+texture_hover = ExtResource("4_ghvs4")
+
+[node name="gauze2" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 640.0
+offset_right = 304.0
+offset_bottom = 765.0
+texture_normal = ExtResource("5_kscpm")
+texture_hover = ExtResource("6_eu3im")
+
+[node name="back" type="TextureButton" parent="."]
+layout_mode = 0
+offset_top = 980.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture_normal = ExtResource("2_hsglx")
+texture_hover = ExtResource("3_vysrr")
+
+[node name="Inventory" parent="." instance=ExtResource("2_kytlm")]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 261.0
+
+[node name="FadeTransition" parent="." instance=ExtResource("3_fp3fm")]
+layout_mode = 1
+offset_right = 13440.0
+offset_bottom = 7560.0
+
+[connection signal="pressed" from="tools" to="." method="_on_item_pickup" binds= ["tools", "tools"]]
+[connection signal="pressed" from="gauze2" to="." method="_on_item_pickup" binds= ["gauze2", "gauze2"]]
+[connection signal="pressed" from="back" to="." method="_on_room_transition" binds= ["res://scenes/scenario2/main.tscn"]]

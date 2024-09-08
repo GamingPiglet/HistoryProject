@@ -1,0 +1,46 @@
+[gd_scene load_steps=10 format=3 uid="uid://c38r6vcg334ap"]
+
+[ext_resource type="Texture2D" uid="uid://dosviwp3on042" path="res://images/bed.png" id="1_8fg8f"]
+[ext_resource type="Script" path="res://scenes/scenario2/patient2.gd" id="1_om1b3"]
+[ext_resource type="Texture2D" uid="uid://ovgkdx80lxxx" path="res://images/backbutton.png" id="2_1d1px"]
+[ext_resource type="PackedScene" uid="uid://7bn725v0e36d" path="res://scenes/Inventory.tscn" id="2_ifapv"]
+[ext_resource type="PackedScene" uid="uid://bbrs2v2b10v1r" path="res://scenes/FadeTransition.tscn" id="3_3vdk7"]
+[ext_resource type="Texture2D" uid="uid://bb35i23nn00lc" path="res://images/chest4.PNG" id="3_iimgi"]
+[ext_resource type="Texture2D" uid="uid://cyln7ru1fl5i7" path="res://images/backbutton2.png" id="3_nkepu"]
+[ext_resource type="Texture2D" uid="uid://cgwgrk651xbaj" path="res://images/chest4hover.png" id="4_pqy2u"]
+[ext_resource type="Texture2D" uid="uid://das1lckckxcsh" path="res://images/chest3.png" id="5_0a5ai"]
+
+[node name="patient" type="TextureRect"]
+texture = ExtResource("1_8fg8f")
+script = ExtResource("1_om1b3")
+
+[node name="stitchtarget" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 344.0
+offset_right = 1254.0
+offset_bottom = 991.0
+texture_normal = ExtResource("3_iimgi")
+texture_hover = ExtResource("4_pqy2u")
+texture_disabled = ExtResource("5_0a5ai")
+
+[node name="back" type="TextureButton" parent="."]
+layout_mode = 0
+offset_top = 980.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture_normal = ExtResource("2_1d1px")
+texture_hover = ExtResource("3_nkepu")
+
+[node name="Inventory" parent="." instance=ExtResource("2_ifapv")]
+layout_mode = 0
+offset_right = 1919.0
+offset_bottom = 261.0
+
+[node name="FadeTransition" parent="." instance=ExtResource("3_3vdk7")]
+layout_mode = 1
+offset_right = 17280.0
+offset_bottom = 9720.0
+
+[connection signal="pressed" from="stitchtarget" to="." method="_on_item_interact" binds= ["tools", "stitchtarget", &"stitched"]]
+[connection signal="pressed" from="back" to="." method="_on_room_transition" binds= ["res://scenes/scenario2/main.tscn"]]

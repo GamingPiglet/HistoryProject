@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=3 uid="uid://dhsdbw0sjhbh"]
+
+[ext_resource type="Texture2D" uid="uid://dosviwp3on042" path="res://images/bed.png" id="1_a1nue"]
+[ext_resource type="Script" path="res://scripts/room.gd" id="1_luxej"]
+[ext_resource type="PackedScene" uid="uid://7bn725v0e36d" path="res://scenes/Inventory.tscn" id="2_f6lhr"]
+[ext_resource type="Texture2D" uid="uid://ovgkdx80lxxx" path="res://images/backbutton.png" id="2_xsgm2"]
+[ext_resource type="Texture2D" uid="uid://cyln7ru1fl5i7" path="res://images/backbutton2.png" id="3_5ltgy"]
+[ext_resource type="Texture2D" uid="uid://b8to57ssao05l" path="res://images/chest1.png" id="3_55lec"]
+[ext_resource type="PackedScene" uid="uid://bbrs2v2b10v1r" path="res://scenes/FadeTransition.tscn" id="3_lc6at"]
+[ext_resource type="Texture2D" uid="uid://cwgbjl4ivf3tn" path="res://images/chest1hover.png" id="4_invkh"]
+[ext_resource type="Texture2D" uid="uid://bd5fmlqyfduja" path="res://images/chest2.PNG" id="5_clhl2"]
+
+[node name="patient" type="TextureRect"]
+texture = ExtResource("1_a1nue")
+script = ExtResource("1_luxej")
+
+[node name="gauzetarget1" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 344.0
+offset_right = 1188.0
+offset_bottom = 954.0
+texture_normal = ExtResource("3_55lec")
+texture_hover = ExtResource("4_invkh")
+texture_disabled = ExtResource("5_clhl2")
+
+[node name="back" type="TextureButton" parent="."]
+layout_mode = 0
+offset_top = 980.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture_normal = ExtResource("2_xsgm2")
+texture_hover = ExtResource("3_5ltgy")
+
+[node name="Inventory" parent="." instance=ExtResource("2_f6lhr")]
+layout_mode = 0
+offset_right = 1919.0
+offset_bottom = 261.0
+
+[node name="FadeTransition" parent="." instance=ExtResource("3_lc6at")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 17280.0
+offset_bottom = 9720.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[connection signal="pressed" from="gauzetarget1" to="." method="_on_item_interact" binds= ["gauze2", "gauzetarget1", &"gauzepacked1"]]
+[connection signal="pressed" from="back" to="." method="_on_room_transition" binds= ["res://scenes/scenario2/main.tscn"]]

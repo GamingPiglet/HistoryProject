@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://dpp5gkmnokep"]
+
+[ext_resource type="Texture2D" uid="uid://tbm78jqt1d3m" path="res://images/main.png" id="1_tlvax"]
+[ext_resource type="Script" path="res://scenes/scenario2/main.gd" id="1_x0asy"]
+[ext_resource type="PackedScene" uid="uid://7bn725v0e36d" path="res://scenes/Inventory.tscn" id="2_fassx"]
+[ext_resource type="Texture2D" uid="uid://bjukmcnc88uyj" path="res://images/storage.png" id="3_aabh8"]
+[ext_resource type="PackedScene" uid="uid://bbrs2v2b10v1r" path="res://scenes/FadeTransition.tscn" id="3_t1al1"]
+[ext_resource type="Texture2D" uid="uid://cap70kdaps48e" path="res://images/storagehover.png" id="4_wu2u0"]
+[ext_resource type="Texture2D" uid="uid://cx7v1k8rrx8lp" path="res://images/patient.png" id="5_gtqps"]
+[ext_resource type="Texture2D" uid="uid://dbo4m4ny25t5u" path="res://images/patienthover.png" id="6_m47i0"]
+
+[node name="main" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tlvax")
+script = ExtResource("1_x0asy")
+
+[node name="storage" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 600.0
+offset_right = 460.0
+offset_bottom = 913.0
+texture_normal = ExtResource("3_aabh8")
+texture_hover = ExtResource("4_wu2u0")
+
+[node name="patient" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 425.0
+offset_top = 504.0
+offset_right = 667.0
+offset_bottom = 607.0
+texture_normal = ExtResource("5_gtqps")
+texture_hover = ExtResource("6_m47i0")
+
+[node name="Inventory" parent="." instance=ExtResource("2_fassx")]
+layout_mode = 0
+
+[node name="FadeTransition" parent="." instance=ExtResource("3_t1al1")]
+layout_mode = 1
+offset_right = 5760.0
+offset_bottom = 3240.0
+
+[connection signal="pressed" from="storage" to="." method="_on_room_transition" binds= ["res://scenes/scenario2/storage.tscn"]]
+[connection signal="pressed" from="patient" to="." method="_on_room_transition" binds= ["res://scenes/scenario2/patient.tscn"]]

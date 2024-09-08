@@ -1,0 +1,30 @@
+~ scenariostart
+Soldiers: HELP! DAVE GOT SHOT IN THE CHEST!
+W-What?
+Doctor: GET HIM TO A BED! GET HIM TO A BED!
+Doctor: What a goddamn mess… I’ll leave you to handle him.
+Doctor: I’ll aspirate his lungs for a bit while you get ready. That way, he won’t drown in his own blood as we operate on him. All you have to do is plug the wounds in his chest with some gauze.
+Okay, it’s the same thing as last time. Just higher stakes. Stay calm.
+Me: Got it.
+=> END
+
+~ holesplugged
+Anesthesiologist: His wound should be ready for anesthesia now. I took a look and it isn't too severe. 
+Anesthesiologist: I’ve administered some. Just stitch it up and he’ll live. Make sure you apply antibiotics to his pleural cavity after every aspiration cycle.
+Considering Doc is working on aspiration, he'll be the one applying the antibiotics.
+Me: What about the bullet?
+Anesthesiologist: Someone else will take it out.
+I guess stitching is my job. Better grab a suturing kit.
+=> END
+
+~ woundssutured
+Doctor: Thanks for taking initiative. That was stressful.
+Me: Don’t mention it. I’m just hoping all of that worked.
+I'm glad the ribcage wasn't shattered with the wound.
+If it was, we would have to cut his chest open to extract all the damaged tissue. In that case, we could have needed a muscle flap to stitch the wound together if it was severe enough.
+Me: You think we can catch a break now?
+=> END
+
+~ stitcheswrong
+I need something to sew the wounds together.
+=> END

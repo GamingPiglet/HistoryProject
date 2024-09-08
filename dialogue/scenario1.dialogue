@@ -1,0 +1,32 @@
+~ scenariostart
+Doctor: Since you’re new here, I can help you get started around here. How about you help me treat this bullet wound?
+Soldier: I don’t know how I feel about a rookie treating my leg.
+Doctor: It’s an easy process, he won’t mess it up.
+I’m a little nervous about helping out around here, but I have to make myself useful somehow.
+Me: What do you need me to do?
+Doctor: I can handle the bullet removal, you just have to treat the wound itself.
+Easy enough. We treat wounds like this by packing some oily emollient gauze into the wound, immobilizing the limb with plaster, then splitting the plaster to give space for the limb to swell.
+We then send them off to a base hospital after we’re sure no complications will develop, and they’ll stitch the wound together 5 to 9 days later so the wound heals in a couple weeks.
+The gauze and plaster should be in the tent somewhere.
+=> END
+
+~ gauzeincorrect
+I need to put gauze in the wound.
+=> END
+
+~ gauzepacked
+Doctor: Now you just need the plaster. Don’t worry about splitting it, I’ll do it for you.
+if not InventoryVars.items.has("plaster")
+	Doctor: There should be some right next to where you got the gauze.
+=> END
+
+~ plasterincorrect
+I need to use plaster to immobilize the limb.
+=> END
+
+~ plasterapplied
+Soldier: Thanks, that went better than I expected.
+Me: You’re welcome.
+It feels nice being able to successfully treat a patient here. Haven’t killed anyone so far.
+Doctor: You’ll have to stay here for a while so we can be sure you don’t develop any complications. After that, you’ll be sent off to get that wound stitched up.
+=> END

@@ -1,0 +1,36 @@
+~ scenariostart
+Soldiers: CHARLES!
+I guess not.
+It looks like the debris from an explosion collided with his neck, and now he's choking on air…
+Doctor: COME ON! GET OVER THERE! HIS WINDPIPE IS CRUSHED!
+Me: Crap.
+It's what I feared.
+Okay, I've never done this before, but I think I need to do a tracheostomy. That means I need to poke a hole into his windpipe and stick a tube in there so he can breathe until he gets to a hospital.
+I do NOT have much time for this. He's choking; I need to hurry.
+=> END
+
+~ needlefound
+if Dialogueflags.strawlast
+	I really hope this works.
+else
+	I might need this later.
+=> END
+
+~ holemade
+Alright, not much time left.
+if not InventoryVars.items.has("tube")
+	Gotta find a tube of some sort.
+else
+	This straw I have should be useful.
+=> END
+
+~ tubeneeded
+I need a tube for the hole.
+=> END
+
+~ tubeinserted
+I gotta wiggle this thing in. Eugh… easy does it…
+Charles: *gasps for air*
+Me: Thank god.
+Doctor: That was one hell of a job. Looks like he's breathing now. Let's send him to a hospital.
+=> END

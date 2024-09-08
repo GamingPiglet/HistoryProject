@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjmv7k3t2hiar"]
+
+[ext_resource type="Script" path="res://scripts/MainMenu.gd" id="1_h55hh"]
+[ext_resource type="Texture2D" uid="uid://jxxptjn7wufx" path="res://images/mainmenu.png" id="2_4wm53"]
+[ext_resource type="PackedScene" uid="uid://bbrs2v2b10v1r" path="res://scenes/FadeTransition.tscn" id="2_hknbh"]
+
+[node name="MainMenu" type="Node"]
+script = ExtResource("1_h55hh")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_4wm53")
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 128.0
+offset_top = -440.0
+offset_right = 896.0
+offset_bottom = -248.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "How to Play"
+
+[node name="Button2" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 128.0
+offset_top = -824.0
+offset_right = 896.0
+offset_bottom = -632.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "Play
+"
+
+[node name="FadeTransition" parent="." instance=ExtResource("2_hknbh")]
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

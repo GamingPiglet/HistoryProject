@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=3 uid="uid://cbhc0q3df3lna"]
+
+[ext_resource type="Script" path="res://scenes/scenario3/main.gd" id="1_88vn5"]
+[ext_resource type="Texture2D" uid="uid://tbm78jqt1d3m" path="res://images/main.png" id="1_b8sgi"]
+[ext_resource type="PackedScene" uid="uid://7bn725v0e36d" path="res://scenes/Inventory.tscn" id="2_vwoe1"]
+[ext_resource type="PackedScene" uid="uid://bbrs2v2b10v1r" path="res://scenes/FadeTransition.tscn" id="3_gkkdp"]
+[ext_resource type="Texture2D" uid="uid://bjukmcnc88uyj" path="res://images/storage.png" id="3_oifwj"]
+[ext_resource type="Texture2D" uid="uid://cap70kdaps48e" path="res://images/storagehover.png" id="4_a71s2"]
+[ext_resource type="Texture2D" uid="uid://cx7v1k8rrx8lp" path="res://images/patient.png" id="5_7stca"]
+[ext_resource type="Texture2D" uid="uid://dbo4m4ny25t5u" path="res://images/patienthover.png" id="6_j78yg"]
+
+[node name="main" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_b8sgi")
+script = ExtResource("1_88vn5")
+
+[node name="storage" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 592.0
+offset_right = 460.0
+offset_bottom = 905.0
+texture_normal = ExtResource("3_oifwj")
+texture_hover = ExtResource("4_a71s2")
+
+[node name="patient" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 504.0
+offset_right = 642.0
+offset_bottom = 607.0
+texture_normal = ExtResource("5_7stca")
+texture_hover = ExtResource("6_j78yg")
+
+[node name="Inventory" parent="." instance=ExtResource("2_vwoe1")]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 261.0
+
+[node name="FadeTransition" parent="." instance=ExtResource("3_gkkdp")]
+layout_mode = 1
+offset_right = 9600.0
+offset_bottom = 5400.0
+
+[connection signal="pressed" from="storage" to="." method="_on_room_transition" binds= ["res://scenes/scenario3/storage.tscn"]]
+[connection signal="pressed" from="patient" to="." method="_on_room_transition" binds= ["res://scenes/scenario3/patient.tscn"]]

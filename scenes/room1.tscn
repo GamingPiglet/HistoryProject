@@ -1,0 +1,67 @@
+[gd_scene load_steps=12 format=3 uid="uid://3uyjkv0jx44c"]
+
+[ext_resource type="Texture2D" uid="uid://dsk6buv3c3nro" path="res://images/background.png" id="1_gtgl8"]
+[ext_resource type="Script" path="res://scripts/room.gd" id="2_nyj41"]
+[ext_resource type="Texture2D" uid="uid://chj5jhhpwtd3d" path="res://images/item1.png" id="3_ms0uk"]
+[ext_resource type="Texture2D" uid="uid://b2x5wwdkn8duw" path="res://images/roomtransition.png" id="4_7h8bj"]
+[ext_resource type="Texture2D" uid="uid://dfsmhf8oyghb0" path="res://images/item1hover.png" id="4_u7ucj"]
+[ext_resource type="Texture2D" uid="uid://cthwv6acgnvtq" path="res://images/interactzone.png" id="5_dmekc"]
+[ext_resource type="Texture2D" uid="uid://tr7veenrlng7" path="res://images/roomtransition2.png" id="6_08fa8"]
+[ext_resource type="Texture2D" uid="uid://bxfaefw5e7ybd" path="res://images/interactzone2.png" id="6_413xg"]
+[ext_resource type="PackedScene" uid="uid://7bn725v0e36d" path="res://scenes/Inventory.tscn" id="7_iuke6"]
+[ext_resource type="PackedScene" uid="uid://bbrs2v2b10v1r" path="res://scenes/FadeTransition.tscn" id="8_d3doh"]
+[ext_resource type="Texture2D" uid="uid://bnoa04s4pr4do" path="res://images/interactzonehover.png" id="8_xm2i6"]
+
+[node name="Background" type="TextureRect"]
+anchors_preset = -1
+anchor_right = 0.0208333
+anchor_bottom = 0.037037
+offset_right = 1880.0
+offset_bottom = 1040.0
+mouse_filter = 2
+texture = ExtResource("1_gtgl8")
+script = ExtResource("2_nyj41")
+metadata/_edit_use_anchors_ = true
+
+[node name="Item1" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1340.0
+offset_top = 268.0
+offset_right = 1704.0
+offset_bottom = 676.0
+texture_normal = ExtResource("3_ms0uk")
+texture_hover = ExtResource("4_u7ucj")
+
+[node name="RoomTransition" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 340.0
+offset_right = 367.0
+offset_bottom = 533.0
+texture_normal = ExtResource("4_7h8bj")
+texture_hover = ExtResource("6_08fa8")
+
+[node name="Item3Target" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 627.0
+offset_top = 281.0
+offset_right = 991.0
+offset_bottom = 689.0
+texture_normal = ExtResource("5_dmekc")
+texture_hover = ExtResource("8_xm2i6")
+texture_disabled = ExtResource("6_413xg")
+
+[node name="Inventory" parent="." instance=ExtResource("7_iuke6")]
+layout_mode = 0
+
+[node name="FadeTransition" parent="." instance=ExtResource("8_d3doh")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[connection signal="pressed" from="Item1" to="." method="_on_item_pickup" binds= ["item1", "Item1"]]
+[connection signal="pressed" from="RoomTransition" to="." method="_on_room_transition" binds= ["res://scenes/room2.tscn"]]
+[connection signal="pressed" from="Item3Target" to="." method="_on_item_interact" binds= ["item3", "Item3Target", "end"]]
